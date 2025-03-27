@@ -1,0 +1,104 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   bonus_hooks.c                                      :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: syl <syl@student.42.fr>                    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2024/05/17 11:04:24 by sforster          #+#    #+#             */
+/*   Updated: 2025/03/27 20:13:16 by syl              ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
+#include "fdf.h"
+
+void	my_mlx_pixel_put(t_data *data, int x, int y, int color)
+{
+	char	*dst;
+
+	if (x < 0 || x >= 2200 || y < 0 || y >= 1300)
+		return ;
+	dst = data->addr + (y * data->line_length + x * (data->bits_per_pixel / 8));
+	*(unsigned int *)dst = color;
+}
+
+int	ft_keys_bonus(int key, t_data *ima)
+{
+	ft_printf("keynote: %i\n", key);
+	if (key == 65307)
+	{
+		ft_exit_esc(ima);
+		return (0);
+	}
+	ima->newview = false;
+	if (key == 35 || key == 98 || key == 118 || key == 30 || key == 112) // p f s v b
+		ft_proj_type(ima, key);
+	ima->z_1 = false;
+	ima->z_2 = false;
+	if (key == 65451 || key == 65453) // + -
+		ft_zoom_type(ima, key);
+	if (key == 65455 || key == 65450) // / *
+		ft_zoom_z(ima, key);
+	if (key == 65361 || key == 65362 || key == 65363 || key == 65364 || key == 99) //arrays??
+		ft_move_type(ima, key);
+	if (key >= 49 && key <= 60) // 1 2 3 
+		ft_colors_type(ima, key);
+	if (key == 122 || key == 120) // ??
+		ft_del_type(ima, key);
+	drawings_plans(ima);
+	return (0);
+}
+
+void	ft_proj_type(t_data *ima, int key)
+{
+	ima->proj = key;
+	ima->newview = true;
+	ima->zoom_x_y = 1;
+	ima->zoom_z = 1;
+	ima->zoom_limit = 25;
+	ima->xmove = 0;
+	ima->ymove = 0;
+	ima->zoom_z = 1;
+	ima->del_y = 0;
+	return ;
+}
+
+void	ft_zoom_type(t_data *ima, int key)
+{	
+	if (key == 65453)
+	{
+		ima->zoom_x_y *= 0.9;
+		ima->zoom_z *= 0.9;
+		ima->zoom_limit--;
+		ima->z_1 = true;
+	}
+	else if (key == 65451)
+	{
+		ima->zoom_x_y /= 0.9;
+		ima->zoom_z /= 0.9;
+		ima->zoom_limit++;
+		ima->z_1 = true;
+	}	
+	else if (ima->zoom_limit > 35 || ima->zoom_limit < 15)
+	{
+		ima->zoom_x_y = 1;
+		ima->zoom_z = 1;
+		ima->zoom_limit = 25;
+	}
+	return ;
+}
+
+void	ft_zoom_z(t_data *ima, int key)
+{
+	if (key == 65455)
+	{
+		ima->zoom_z /= 0.9;
+		ima->z_2 = true;
+	}
+	else if (key == 65450)
+	{
+		ima->zoom_z *= 0.9;
+		ima->z_2 = true;
+	}
+	return ;
+}
