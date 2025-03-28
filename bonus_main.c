@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   bonus_main.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: syl <syl@student.42.fr>                    +#+  +:+       +#+        */
+/*   By: sforster <sforster@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/18 12:34:47 by sforster          #+#    #+#             */
-/*   Updated: 2025/03/27 20:10:57 by syl              ###   ########.fr       */
+/*   Updated: 2025/03/28 11:31:09 by sforster         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,11 +41,11 @@ int	main(int argc, char **argv)
 
 void	drawings_plans(t_data *ima)
 {	
-	if (ima->proj == 30)
+	if (ima->proj == 102)
 		init_view(ima, front);
 	if (ima->proj == 112)
 		init_view(ima, plan);
-	if (ima->proj == 35)
+	if (ima->proj == 115)
 		init_view(ima, side);
 	if (ima->proj == 118)
 		init_view(ima, ft_iso_30);
@@ -82,7 +82,7 @@ void	init_view(t_data *ima, void (*view)())
 
 void	ft_init_view1(t_data *ima)
 {
-	ima->proj = 11;
+	ima->proj = 118;
 	ima->zoom_limit = 25;
 	ima->xmove = 0;
 	ima->ymove = 0;

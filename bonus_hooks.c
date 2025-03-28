@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   bonus_hooks.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: syl <syl@student.42.fr>                    +#+  +:+       +#+        */
+/*   By: sforster <sforster@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/17 11:04:24 by sforster          #+#    #+#             */
-/*   Updated: 2025/03/27 20:13:16 by syl              ###   ########.fr       */
+/*   Updated: 2025/03/28 11:35:11 by sforster         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,7 +31,8 @@ int	ft_keys_bonus(int key, t_data *ima)
 		return (0);
 	}
 	ima->newview = false;
-	if (key == 35 || key == 98 || key == 118 || key == 30 || key == 112) // p f s v b
+// 	if (key == 35 || key == 98 || key == 118 || key == 30 || key == 112) // p f s v b	
+	if (key == 102 || key == 98 || key == 118 || key == 115 || key == 112) // p f s v b
 		ft_proj_type(ima, key);
 	ima->z_1 = false;
 	ima->z_2 = false;
@@ -39,11 +40,11 @@ int	ft_keys_bonus(int key, t_data *ima)
 		ft_zoom_type(ima, key);
 	if (key == 65455 || key == 65450) // / *
 		ft_zoom_z(ima, key);
-	if (key == 65361 || key == 65362 || key == 65363 || key == 65364 || key == 99) //arrays??
+	if (key == 65361 || key == 65362 || key == 65363 || key == 65364 || key == 99) //arrays
 		ft_move_type(ima, key);
 	if (key >= 49 && key <= 60) // 1 2 3 
 		ft_colors_type(ima, key);
-	if (key == 122 || key == 120) // ??
+	if (key == 122 || key == 120) // delete cut z x
 		ft_del_type(ima, key);
 	drawings_plans(ima);
 	return (0);
