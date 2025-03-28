@@ -24,12 +24,12 @@ delete cut
 z on an axe 
 x on an axe
 
-
-1 blanc
-2 bleu
+1 base colors
+2 blanc
+3 bleu
 3
 4
-5 ??
+5
 
 problemes:
 et 2 fois affichage pojection iso 30 et 42 et plan etc...

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   bonus_hooks_2.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: syl <syl@student.42.fr>                    +#+  +:+       +#+        */
+/*   By: sforster <sforster@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/14 13:39:41 by sforster          #+#    #+#             */
-/*   Updated: 2025/03/27 20:13:09 by syl              ###   ########.fr       */
+/*   Updated: 2025/03/28 11:59:31 by sforster         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,7 +32,7 @@ void	ft_move_type(t_data *ima, int key) //fleches
 
 void	ft_colors_type(t_data *ima, int key)
 {
-	ima->color = key - 30;
+	ima->color = key - 31;
 	return ;
 }
 
