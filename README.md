@@ -11,6 +11,10 @@
 First graphical project
 discover chained lists
 had some fun 
+couleurs pas très bien gérées
+
+![alt text](image.png)
+
 
 ### 🖥️ Compilation & Usage
 
@@ -25,6 +29,9 @@ $> make bonus
 $>./fdf_bonus pyra.fdf
 $> ...
 ```
+
+
+
 Commands on bonus mode:
 `+` / `-` zoom 
 
@@ -44,3 +51,4 @@ delete layers:
 
 *Part of the C++ module series at 42 Lausanne*
 
+<video controls src="pyra2.webm" title="Title"></video>
