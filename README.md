@@ -49,6 +49,4 @@ colors:
 delete layers:
 `z` on axe 1 · `x` on an axe 2
 
-*Part of the C++ module series at 42 Lausanne*
-
 <video controls src="pyra2.webm" title="Title"></video>
